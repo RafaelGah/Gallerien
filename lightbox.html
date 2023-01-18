@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+
+<style type="text/css">
+    body{
+        overflow-x: hidden;
+    }
+    .item{
+        transition:  .5s ease-in-out;
+    }
+    .item:hover{
+        filter: brightness(80%);
+    }
+    .item img{
+        object-fit:cover;
+    }
+    figure{
+    margin: 0;
+   position: relative;
+}
+figure:hover figcaption{
+     opacity: 1;
+}
+figcaption{
+    opacity: 0;
+}
+figcaption{
+    position: absolute;
+    bottom: 0;
+    color: #FFF;
+    background-color: rgba(200, 200, 200, 0.5);
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom:1em;
+    text-shadow: 2px 2px #000;
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    border-radius: 5%;
+}
+h1{
+    text-align: center;
+    border-bottom: solid black;
+    padding-bottom: 3px;
+}
+h2{
+    text-align: center;
+    border-top: solid black;
+    padding-top: 3px;
+}
+#animate
+{
+    width: 100%;
+    padding: 0px;
+    margin-top: 0;
+    overflow-x: hidden;
+    margin-bottom: 30%;
+}
+.sky{
+    width: 100%;
+    height: 100%;
+}
+.road1
+{
+    position: absolute;
+    top: 83%;
+    left: -100%;
+    width: 100%;
+    animation: road1 10s infinite linear reverse;
+}
+.road2
+{
+    position: absolute;
+    top: 83%;
+    width: 100%;
+    left: 0px;
+    animation: road2 10s infinite linear reverse;
+}
+.buildings1
+{
+    position: absolute;
+    top: 0%;
+    bottom: 25%;
+    left: -100%;
+    width: 100%;
+    animation: building1 10s infinite linear reverse;
+}
+.buildings2
+{
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    width: 100%;
+    animation: building2 10s infinite linear reverse;
+}
+.car
+{
+    position: absolute;
+    top: 58%;
+    width: 50%;
+    left: 25%;   
+}
+.face
+{
+    position: absolute;
+    top: 82%;
+    width:12%;
+    left: 44%; 
+    animation: MoveUpDown 5s linear infinite, face ease 5s infinite; 
+}
+.wheel1
+{
+    position: absolute;
+    top: 83%;
+    left: 34%;
+    width: 8%;
+    animation: wheel 3s infinite linear;
+}
+.wheel2
+{
+    position: absolute;
+    top: 83%;
+    left: 59%;
+    width: 8%;
+    animation: wheel 3s infinite linear;
+}
+
+@keyframes road1
+{
+    from
+    {
+        left: -100%px;
+    }
+    to
+    {
+        left: 0px;
+    }
+}
+@keyframes road2
+{
+    from
+    {
+        left: 0px;
+    }
+    to
+    {
+        left: 100%px;
+    }
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    top: 70%;
+  }
+  50% {
+    top: 64%;
+  }
+}
+@keyframes face {
+    0%   { opacity:0; }
+    50%  { opacity:1; }
+    100% { opacity:0; }
+  }
+@keyframes building1
+{
+    from
+    {
+        left: -100%;
+    }
+    to
+    {
+        left: 0px;
+    }
+}
+@keyframes building2
+{
+    from
+    {
+        left: 0px;
+    }
+    to
+    {
+        left: 100%;
+    }
+}
+@keyframes wheel
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <h1>Gallery</h1>
+        <div id="animate">
+            <img src="sky.jpg" class="sky">
+            <img src="road.jpg" class="road1">
+            <img src="road.jpg" class="road2">
+            <img src="city.png" class="buildings1">
+            <img src="city.png" class="buildings2">
+            <img src="car.png" class="car">
+            <img src="gzuz.png" class="face">
+            <img src="wheel.png" class="wheel1">
+            <img src="wheel.png" class="wheel2">
+        </div>
+    <div class="row mt-4">
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="Desert.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="Desert.jpg" width="100%" height="100%">
+                    <figcaption>red car in the desert</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="Desert2.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="Desert2.jpg" width="100%" height="100%">
+                    <figcaption>desert</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="desertCar.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure width="100%" height="100%">
+                    <img src="desertCar.jpg" width="100%" height="100%">
+                    <figcaption>red car</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="snow.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="snow.jpg" width="100%" height="100%">
+                    <figcaption>tractor on a snowy slope</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="snowy.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="snowy.jpg" width="100%" height="100%">
+                    <figcaption>snowy slope</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="tracktor.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="tracktor.jpg" width="100%" height="100%">
+                    <figcaption>tractor</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="jungle.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="jungle.jpg" width="100%" height="100%">
+                    <figcaption>tank in the jungle</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="jungle2 (1).jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="jungle2 (1).jpg" width="100%" height="100%">
+                    <figcaption>jungle</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="tank.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="tank.jpg" width="100%" height="100%">
+                    <figcaption>tank</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="Strander.PNG" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="Strander.PNG" width="100%" height="100%">
+                    <figcaption>quad bike at the beach</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="Strand.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="Strand.jpg" width="100%" height="100%">
+                    <figcaption>beach</figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <a href="quad.jpg" class="fancybox" data-fancybox="gallery1">
+                <figure>
+                    <img src="quad.jpg" width="100%" height="100%">
+                    <figcaption>quad bike</figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="item col-sm-6 col-md-4 mb-3">
+        
+        </div>
+   
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <video controls preload="metadata" height="100%" width="100%">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="item col-sm-6 col-md-4 mb-3">
+            <figure>
+
+        </figure>
+        </div>
+
+    </div>
+
+    </div>
+    <footer>
+        <h2>Rafael Gahler m152</h2>
+    </footer>
+</body>
+</html>
